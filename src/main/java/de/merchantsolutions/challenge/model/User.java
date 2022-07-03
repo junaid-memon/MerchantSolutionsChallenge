@@ -10,12 +10,15 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Product")
-public class Product {
-
+@Table (name = "User")
+public class User {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long productID;
-	private String name;
-	private Double price;
+	private long userID;
+	
+	private String username;
+	private String password;
+	private String userRole;
+
 }

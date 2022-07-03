@@ -2,7 +2,7 @@ package de.merchantsolutions.challenge.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import de.merchantsolutions.challenge.model.Seller;
+import de.merchantsolutions.challenge.model.User;
 
 /**
  * @author memon
@@ -11,6 +11,6 @@ import de.merchantsolutions.challenge.model.Seller;
  *         and allows the CRUD operation on the stored data
  */
 
-public interface SellerRepository extends CrudRepository<Seller, Long> {
+public interface UserRepository extends CrudRepository<User, Long> {
 
 }

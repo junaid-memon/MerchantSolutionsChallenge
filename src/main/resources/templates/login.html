@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Merchant Solutions Login</title>
+<meta charset="UTF-8">
+</head>
+<body>
+	<form class="loginForm" th:action="@{/login}" method="post">
+		<div>
+			Enter Username/Email: <br> <input style="margin-left: 10px;" type="text" name="email">
+		</div>
+		<br>
+		<div>
+			Password: <br> <input style="margin-left: 10px;" type="password" name="password">
+		</div>
+		<br>
+		<div>
+			<input style="margin-left: 5px;" type="radio" id="buyer" name="user"value="Buyer"> 
+			<label style="margi n-left: 5px;" for="buyer">Buyer</label> <br> 
+			<input style="margin-left: 5px;" type="radio" id="seller" name="user" value="Seller" > 
+			<label for="seller" style="margin-left: 5px;"> Seller </label><br>
+		</div>
+		<br>
+		<div>
+			<input type="submit" name="submit" placeholder="Submit" value="Login">
+		</div>
+	</form>
+	<div th:if="${param.success}">
+		<div class="alert alert-info">You've successfully registered
+						to our awesome app!</div>
+		</div>
+</body>
+</html>
