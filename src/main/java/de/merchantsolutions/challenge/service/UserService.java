@@ -1,6 +1,5 @@
 package de.merchantsolutions.challenge.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import de.merchantsolutions.challenge.dto.UserRegistrationDTO;
@@ -12,7 +11,6 @@ public class UserService {
 
 	private static UserRepository userRepository;
 	
-	@Autowired
 	private static UserRegistrationDTO userRegistrationDTO;
 	
 	public UserService(UserRepository userRepository){
