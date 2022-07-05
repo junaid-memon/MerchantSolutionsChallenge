@@ -1,6 +1,5 @@
 package de.merchantsolutions.challenge.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
 import de.merchantsolutions.challenge.model.User;
@@ -15,7 +14,5 @@ import de.merchantsolutions.challenge.model.User;
 public interface UserRepository extends CrudRepository<User, Long> {
 
 	User findByUsername(String username);
-
-	//User findbyUsername(String username);
 	
 }

@@ -15,7 +15,6 @@ public class UserService {
 	
 	public UserService(UserRepository userRepository){
 		UserService.userRepository = userRepository;
-		//UserService.userRegistrationDTO = userRegistrationDTO;
 	}
 	
 	

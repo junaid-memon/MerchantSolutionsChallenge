@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import de.merchantsolutions.challenge.model.User;
 
 
+@SuppressWarnings("serial")
 public class CustomUserDetails implements UserDetails{
 	
 	private User user;
