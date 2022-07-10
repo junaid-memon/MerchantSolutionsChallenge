@@ -12,11 +12,11 @@ import de.merchantsolutions.challenge.model.User;
 import de.merchantsolutions.challenge.repository.UserRepository;
 
 @Service
-public class LoadDataService {
+public class UserDataLoadService {
 	private List<UserRegistrationDTO> userRegistrationDTO;
 	private UserRepository userRepository;
 	
-	LoadDataService(UserRepository userRepository){
+	UserDataLoadService(UserRepository userRepository){
 		this.userRepository = userRepository;
 	}
 	
@@ -42,7 +42,7 @@ public class LoadDataService {
 		userRegistrationDTO.add(buyer);
 		userRegistrationDTO.add(seller);
 		
-		System.out.println(userRegistrationDTO);
+		//System.out.println(userRegistrationDTO);
 		MaptoEntity();
 		
 	}

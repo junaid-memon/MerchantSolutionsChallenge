@@ -3,9 +3,9 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>Merchant Solutions Login</title>
-<meta charset="UTF-8">
 </head>
 <body>
+	<div class="wrapper">
 	<form class="loginForm" th:action="@{/login}" method="post">
 		<div>
 			Enter Username/Email: <br> <input style="margin-left: 10px;" type="text" name="username">
@@ -30,6 +30,7 @@
 	<br>
 		<span style="color:red" th:if="${error}"  th:text="${error}">Error</span> 
 	 	<span style="color:red" th:if="${message}"  th:text="${message}">Logout</span>
+	</div>
 	</div>
 </body>
 </html>

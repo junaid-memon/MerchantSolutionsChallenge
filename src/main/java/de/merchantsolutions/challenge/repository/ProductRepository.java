@@ -7,7 +7,7 @@ import de.merchantsolutions.challenge.model.Product;
 /**
  * @author memon
  * 
- *         This interface is used to create a repository for the District data
+ *         This interface is used to create a repository for the Product data
  *         and allows the CRUD operation on the stored data
  */
 

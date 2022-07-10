@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<link rel="stylesheet" href="main.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+	<h2>Register a new Product</h2>
+	<form th:action="@{/registerProduct}" method="post">
+		<h3>Submit the product</h3>
+		<input type="text" id="productName" placeholder="Enter Product" name="productName" required> 
+			<input type="text" id="Price" placeholder="Enter Price" name="givenPrice" required> 
+			<input type="submit" class="btn" value="Submit" />
+	</form>
+	<div>
+	 <span style="color:red" th:if="${success}"  th:text="${success}">Added</span>
+	 <br><a href="login?logout"> Logout </a><br>
+	 <a href="purchase"> Return to purchase page</a> 
+	 </div>
+</body>
+</html>

@@ -11,6 +11,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * @author memon
+ * 
+ *         Configuration class for authorizing and authenticating Users
+ * 
+ */
+
 @Configuration
 @EnableWebSecurity
 public class LoginSecurityConfiguration {
@@ -20,9 +27,23 @@ public class LoginSecurityConfiguration {
 
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/").permitAll().antMatchers("/registerProduct")
-		.hasAuthority("SELLER").anyRequest().authenticated().and().formLogin().loginPage("/login")
-		.defaultSuccessUrl("/purchase").failureUrl("/login?error").permitAll().and().logout().permitAll();
+		http
+			.csrf().disable()
+			.authorizeRequests()
+			.antMatchers("/").permitAll()
+			.antMatchers("/registerProduct", "/register")
+			.hasAuthority("SELLER")
+			.anyRequest()
+			.authenticated()
+			.and()
+			.formLogin()
+			.loginPage("/login")
+			.defaultSuccessUrl("/purchase")
+			.failureUrl("/login?error")
+			.permitAll()
+			.and()
+			.logout()
+			.permitAll();
 
 		return http.build();
 	}

@@ -9,12 +9,19 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import de.merchantsolutions.challenge.model.User;
 
+/**
+ * @author memon
+ * 
+ *         Product Controller class, which validates the submitted price and
+ *         also registers new product
+ * 
+ */
 
 @SuppressWarnings("serial")
-public class CustomUserDetails implements UserDetails{
-	
+public class CustomUserDetails implements UserDetails {
+
 	private User user;
-	
+
 	public CustomUserDetails(User user) {
 		super();
 		this.user = user;
@@ -61,7 +68,5 @@ public class CustomUserDetails implements UserDetails{
 		// TODO Auto-generated method stub
 		return true;
 	}
-
-	
 
 }

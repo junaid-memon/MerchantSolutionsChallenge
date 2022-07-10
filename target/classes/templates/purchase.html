@@ -1,7 +1,54 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<link rel="stylesheet" href="main.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
 <body>
-	<h1>Hello Purchase</h1>
-</body>
-</html>
+    <h2>Product page</h2>
+    <br><a href="register"> Register new Product </a><br>
+    <div class="openBtn" th:each="product: ${products}">
+    <div th:class="${product.name}">
+    <br>
+    <span th:text="${product.name}"></span> 
+		<br>
+      <button class="openButton" th:onclick="openForm([[${product.name}]])"><strong>Submit Price</strong></button>
+    </div>
+    <br>
+    </div>
+    <div class="loginPopup" >
+      <div class="formPopup" id="popupForm">
+        <form th:action="@{/purchaseItem}" class="formContainer" method="post">
+          <h2>Submit the price</h2>
+          <input type="text" id="productName" placeholder="Enter Product" name="productName" required>
+          <input type="text" id="submitPrice" placeholder="Enter Price" name="givenPrice" required>
+          <input type="submit" class="btn" value="Submit"/>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+        <div> 
+		<br>
+	</div>
+	</div>
+    </div>
+    <div>
+	<br>
+	 <span style="color:red" th:if="${purchased}"  th:text="${purchased}">Purchased</span> 
+	 	<span style="color:red" th:if="${failed}"  th:text="${failed}">Failed</span>
+	 	<a href="purchase" th:if="${purchaseItem}" > Return to purchase page</a>
+	 </div>
+	 <br><a href="login?logout"> Logout </a><br>
+  </body>
+  <script>
+      function openForm(product_name) {
+        document.getElementById("popupForm").style.display = "block";
+        document.getElementById("productName").setAttribute("value",product_name)
+      }
+      function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+      }
+    </script>
+  </html>
